@@ -25,7 +25,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                             </xsl:when>
                             <xsl:otherwise>
                                 <!-- AFN TODO -->
-                                <img src="cid:logo.jpg" alt="logo"/>
+                                <img style="width: 140px; height: auto;" src="https://www.yorku.ca/wp-content/themes/york2020/images/yorku-logo.jpg" alt="logo"/>
                                 <!-- END OF AFN TODO -->
                             </xsl:otherwise>
                         </xsl:choose>
