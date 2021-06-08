@@ -158,7 +158,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                     <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:wlucirc@wlu.ca"> wlucirc@wlu.ca</a> | (519) 884-0710 x3222</p>
                                 </xsl:when>
                                 <xsl:when test="$external_id = '01OCUL_YOR' ">
-                                    <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:wlucirc@wlu.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
+                                    <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
                                 </xsl:when>                                                             
                             </xsl:choose>                                       
                         </tr>                                   
@@ -219,7 +219,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                     <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:wlucirc@wlu.ca"> wlucirc@wlu.ca</a> | (519) 884-0710 x3222</p>
                                 </xsl:when>     
                                 <xsl:when test="$external_id = '01OCUL_YOR' ">
-                                    <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:wlucirc@wlu.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
+                                    <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
                                 </xsl:when>                                                             
                             </xsl:choose>                                                                   
                         </tr>               
