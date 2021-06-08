@@ -20,32 +20,32 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 </xsl:template> 
 
 <xsl:template name="contactUs">
-	<table align="left">
-	<tr>
-	<td align="left">
-	<a>
+    <table align="left">
+    <tr>
+    <td align="left">
+    <a>
                         <xsl:attribute name="href">
                           @@email_contact_us@@
                         </xsl:attribute>
-						@@contact_us@@
-					</a>
-	</td>
+                        @@contact_us@@
+                    </a>
+    </td>
 </tr>
-	</table>
+    </table>
 </xsl:template>
 <xsl:template name="myAccount">
-	<table align="left">
-	<tr>
-	<td align="left">
-	<a>
+    <table align="left">
+    <tr>
+    <td align="left">
+    <a>
                         <xsl:attribute name="href">
                           @@email_my_account@@
                         </xsl:attribute>
-						@@my_account@@
-					</a>
-	</td>
+                        @@my_account@@
+                    </a>
+    </td>
 </tr>
-	</table>
+    </table>
 </xsl:template>
 
 
