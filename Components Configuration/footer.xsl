@@ -506,7 +506,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     </xsl:when>
                     <xsl:otherwise>                     
                         <!-- AFN TODO -->
-                        <a href="https://ocul-gue.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_GUE:GUELPH">AFN PARTNERS: PLACE LOCAL ACCOUNT INFO HERE</a>
+                        <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
                         <!-- END OF AFN TODO -->
                     </xsl:otherwise>
                 </xsl:choose>   
