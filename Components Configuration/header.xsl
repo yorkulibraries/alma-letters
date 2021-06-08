@@ -12,15 +12,27 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         </xsl:attribute>
          <!-- LOGO INSERT -->
         <tr>
-        <xsl:attribute name="style">
-            <xsl:call-template name="headerLogoStyleCss" /> <!-- style.xsl -->
-        </xsl:attribute>
+            <xsl:attribute name="style">
+                <xsl:call-template name="headerLogoStyleCss" /> <!-- style.xsl -->
+            </xsl:attribute>
             <td colspan="2">
-            <div id="mailHeader">
-                  <div id="logoContainer" class="alignLeft">
-                        <img src="cid:logo.jpg" alt="logo"/>
-                   </div>
-            </div>
+                <div id="mailHeader">
+                    <div id="logoContainer" class="alignLeft">
+                        <!-- AFN CODE -->
+                        <xsl:choose>
+                            <xsl:when test="(notification_data/user_for_printing/user_group = 'AFNUSER') or (notification_data/user/user_group = 'AFNUSER') or (notification_data/request/user_group = 'AFNUSER') or (notification_data/user_for_printing/user_group = 'TUGUSER') or (notification_data/user/user_group = 'TUGUSER') or (notification_data/request/user_group = 'TUGUSER')">
+                                <img src="https://ocul.on.ca/omni/images/omni_logo_for_letters.jpg" alt="logo"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- AFN TODO -->
+                                <img src="cid:logo.jpg" alt="logo"/>
+                                <!-- END OF AFN TODO -->
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <!-- END OF AFN CODE -->
+
+                    </div>
+                </div>
             </td>
         </tr>
         <!-- END OF LOGO INSERT -->
