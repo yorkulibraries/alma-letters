@@ -21,6 +21,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 </xsl:template> 
 
 <xsl:template name="contactUs">
+    <!--
     <table align="left">
         <tr>
             <td align="left">
@@ -33,6 +34,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </td>
         </tr>
     </table>
+    -->
 </xsl:template>
 
 <xsl:template name="myAccount">
