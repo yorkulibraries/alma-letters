@@ -181,9 +181,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                 <b>@@recall_and_no_date_change@@</b>
                                             </xsl:if>
                                             <xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
-                                                <!-- <b>@@message@@</b> -->
-                                                <b>The due date for the following item(s) currently on loan to you have been changed!<br /><br />
-                                                Please return the item(s) as quickly as possible. Items can be returned to McLaughlin Library and selected branches of the University of Waterloo and Wilfrid Laurier libraries.</b>                        
+                                                <b>@@message@@</b>                      
                                             </xsl:if>
                                             <xsl:if test="notification_data/message='RECALL_CANCEL_RESTORE_ORIGINAL_DUEDATE'">
                                                 <b>@@cancel_recall_date_change@@</b>
