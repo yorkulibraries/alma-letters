@@ -11,23 +11,23 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:include href="recordTitle.xsl" />
 
 <xsl:template match="/">
-	<html>
-		<head>
-		<xsl:call-template name="generalStyle" />
-		</head>
+    <html>
+        <head>
+        <xsl:call-template name="generalStyle" />
+        </head>
 
-		<body>
-			<xsl:attribute name="style">
-				<xsl:call-template name="bodyStyleCss" /> <!-- style.xsl -->
-			</xsl:attribute>
+        <body>
+            <xsl:attribute name="style">
+                <xsl:call-template name="bodyStyleCss" /> <!-- style.xsl -->
+            </xsl:attribute>
 
-			<xsl:call-template name="head" /> <!-- header.xsl -->
-			<xsl:call-template name="senderReceiver" /> <!-- SenderReceiver.xsl -->
+            <xsl:call-template name="head" /> <!-- header.xsl -->
+            <xsl:call-template name="senderReceiver" /> <!-- SenderReceiver.xsl -->
 
-			<xsl:call-template name="toWhomIsConcerned" /> <!-- mailReason.xsl -->
+            <xsl:call-template name="toWhomIsConcerned" /> <!-- mailReason.xsl -->
 
-			<div class="messageArea">
-				<div class="messageBody">
+            <div class="messageArea">
+                <div class="messageBody">
                     <!-- AFN CODE -->
                     <xsl:choose>
                         <!-- AFN test (is_afn_patron) defined in footer.xsl -->
@@ -151,37 +151,37 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:call-template name="AFNLastFooter" /> 
             <xsl:call-template name="AFNAccount" />
             <!-- END OF AFN TODO -->
-		</body>
-	</html>
+        </body>
+    </html>
 </xsl:template>
 
 
 <xsl:template name="on_hold_shelf_head">
     <table cellspacing="0" cellpadding="5" border="0">
-    	<xsl:attribute name="style">
-    		<xsl:call-template name="headerTableStyleCss" /> <!-- style.xsl -->
-    	</xsl:attribute>
-    	<!-- LOGO INSERT -->
-    	<tr>
-    	<xsl:attribute name="style">
-    		<xsl:call-template name="headerLogoStyleCss" /> <!-- style.xsl -->
-    	</xsl:attribute>
-    		<td colspan="2">
-    		<div id="mailHeader">
+        <xsl:attribute name="style">
+            <xsl:call-template name="headerTableStyleCss" /> <!-- style.xsl -->
+        </xsl:attribute>
+        <!-- LOGO INSERT -->
+        <tr>
+        <xsl:attribute name="style">
+            <xsl:call-template name="headerLogoStyleCss" /> <!-- style.xsl -->
+        </xsl:attribute>
+            <td colspan="2">
+            <div id="mailHeader">
                   <div id="logoContainer" class="alignLeft">
                         <img src="cid:logo.jpg" alt="logo"/>
                    </div>
-    		</div>
-    		</td>
-    	</tr>
+            </div>
+            </td>
+        </tr>
     <!-- END OF LOGO INSERT -->
-    	<tr>
+        <tr>
 
       <xsl:for-each select="notification_data/general_data">
-    	 <td>
+         <td>
     <xsl:choose>
     <xsl:when test="/notification_data/organization_unit/name = 'Osgoode Hall Law School Library' ">
-    		<h1>Osgoode Curbside Pickup</h1>
+            <h1>Osgoode Curbside Pickup</h1>
     </xsl:when>
     <xsl:otherwise>
         <xsl:choose>
@@ -194,10 +194,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         </xsl:choose>
     </xsl:otherwise>
     </xsl:choose>
-    	</td>
-    	<td align="right">
-    		<xsl:value-of select="current_date"/>
-    	</td>
+        </td>
+        <td align="right">
+            <xsl:value-of select="current_date"/>
+        </td>
       </xsl:for-each>
 
     </tr>
