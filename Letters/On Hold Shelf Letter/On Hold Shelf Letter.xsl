@@ -33,6 +33,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
                 </div>
             </div>
+
+            <!-- AFN TODO -->
+            <!-- AFN footer template options from footer.xsl -->
+            <xsl:call-template name="AFNLastFooter" /> 
+            <xsl:call-template name="AFNAccount" />
+            <!-- END OF AFN TODO -->
 		</body>
 	</html>
 </xsl:template>
