@@ -158,7 +158,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <td>
                             
                             <!-- short_loans_msg is: The following item(s) are coming due. Please return the item(s) to your home library or renew them online at -->                           
-                            <b>@@short_loans_message@@ <a href="https://ocul-gue.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_GUE:GUELPH">your account</a></b>
+                            <b>@@short_loans_message@@ <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT">your account</a></b>
                             <br/><br/>
                         </td>
                     </tr>
