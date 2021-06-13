@@ -26,11 +26,123 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 			<xsl:call-template name="toWhomIsConcerned" /> <!-- mailReason.xsl -->
 
-
-
 			<div class="messageArea">
 				<div class="messageBody">
+                    <!-- AFN CODE -->
+                    <xsl:choose>
+                        <!-- AFN test (is_afn_patron) defined in footer.xsl -->
+                        <xsl:when test="(string-length($is_afn_patron) > 0)">
+                            <!-- handle AFN supported languages (is_preferred_lang_fr) defined in footer.xsl-->
+                            <xsl:choose>
+                                <xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
+                                    <!-- handle AFN language fr -->
+                                    <table cellspacing="0" cellpadding="5" border="0">
+                                        <tr>
+                                            <td>
+                                                L'élément suivant de <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé sur <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
+                                            </td>
+                                        </tr>
 
+                                        <xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+                                            <tr>
+                                                <td>
+                                                    <br/>
+                                                    L'article sera conservé pour vous jusqu'au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
+                                                </td>
+                                            </tr>
+                                        </xsl:if>
+                                        <tr>
+                                            <td>
+                                                <br/>
+                                                <xsl:call-template name="recordTitle" /> <!-- recordTitle.xsl -->
+                                            </td>
+                                        </tr>
+
+                                        <!-- If notes exist, then we'll display the notes lable and the note -->
+                                        <xsl:if test="notification_data/request/system_notes !='' ">
+                                            <tr>
+                                                <td>
+                                                    <br/>
+                                                    <b>NOTES qui peuvent affecter le prêt:</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><xsl:value-of select="notification_data/request/system_notes"/></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <br/>      
+                                                    <!-- AFN-VERSION 1.1 -->
+                                                    Pour connaitre les heures de service et les informations sur le ramassage, veuillez consulter la page web de la bibliothèque sur le ramassage, donnée ci-dessus.
+                                                    <br/>
+                                                </td>
+                                            </tr>
+
+                                        </xsl:if>                                       
+                                    </table>                                
+                                </xsl:when> 
+                                <xsl:otherwise>
+                                    <!-- handle AFN language default english 'en' -->
+                                    <table cellspacing="0" cellpadding="5" border="0">
+                                        <tr>
+                                            <td>
+                                                The following item from <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
+                                            </td>
+                                        </tr>
+
+                                        <xsl:if test="notification_data/request/work_flow_entity/expiration_date">
+                                            
+                                            <tr>
+                                                <td>
+                                                    <br/>
+                                                    The item will be held for you until <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
+                                                </td>
+                                            </tr>
+                                        </xsl:if>
+                                        
+                                        <tr>                                        
+                                            <td>
+                                                <br/>
+                                                <xsl:call-template name="recordTitle" /> <!-- recordTitle.xsl -->
+                                            </td>
+                                        </tr>
+
+                                        <!-- If notes exist, then we'll display the notes lable and the note -->
+                                        <xsl:if test="notification_data/request/system_notes !='' ">                                            
+                                            <tr>
+                                                <td>
+                                                    <br/>    
+                                                    <b>NOTES that may affect loan:</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><xsl:value-of select="notification_data/request/system_notes"/></td>
+                                            </tr>
+                                        </xsl:if>   
+                                        
+                                        <tr>                                                                                                                                
+                                            <td>
+                                                <br/>                                                
+                                                Please check the website at the pickup library indicated above for service hours and pickup information.
+                                                <br/>
+                                            </td>
+                                        </tr>
+                                                                            
+                                    </table>
+                                </xsl:otherwise>
+                            </xsl:choose>                                                                                                                   
+                        </xsl:when>
+                        <xsl:otherwise>         
+                            <!-- AFN TODO -->
+                            <!-- handle local institution on hold (ie. PUT YOUR EXISTING HOLD LETTER INFO HERE between the xsl:otherwise tag)-->
+                            
+                            <!-- END OF AFN TODO -->
+                        </xsl:otherwise>
+                    </xsl:choose>   
+                    <!-- END OF AFN CODE -->
                 </div>
             </div>
 
