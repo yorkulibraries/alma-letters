@@ -17,6 +17,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           <xsl:call-template name="bodyStyleCss" />
           <!-- style.xsl -->
         </xsl:attribute>
+        <h1>
+          <b>Send @@to@@:
+            <xsl:value-of select="notification_data/request/calculated_destination_name" />
+          </b>
+        </h1>
         <xsl:call-template name="head" />
         <!-- header.xsl -->
         <div class="messageArea">
