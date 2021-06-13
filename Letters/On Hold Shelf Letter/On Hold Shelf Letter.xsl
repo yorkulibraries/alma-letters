@@ -244,8 +244,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <li>Wear a face and nose covering while on campus</li>
                 </ul>
                 
-                <xsl:call-template name="lastFooter"/>
-                
             </xsl:when>
 
 
@@ -325,8 +323,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <p>Kind regards,</p>
 
                         <p>York Libraries</p>
-                        
-                        <xsl:call-template name="lastFooter"/>
 
                     </xsl:when>
                     <xsl:otherwise>
@@ -361,8 +357,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <p>Kind regards,</p>
 
                         <p>York Libraries</p>
-
-                        <xsl:call-template name="lastFooter"/>
                         
                     </xsl:otherwise>
                 </xsl:choose>
