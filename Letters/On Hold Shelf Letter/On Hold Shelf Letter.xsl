@@ -138,7 +138,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <xsl:otherwise>         
                             <!-- AFN TODO -->
                             <!-- handle local institution on hold (ie. PUT YOUR EXISTING HOLD LETTER INFO HERE between the xsl:otherwise tag)-->
-                            
+                            <xsl:call-template name="org_yul_locker_pickup" />
                             <!-- END OF AFN TODO -->
                         </xsl:otherwise>
                     </xsl:choose>   
