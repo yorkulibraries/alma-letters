@@ -17,7 +17,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
             <body>
             <h1>
-                <b><xsl:value-of select="notification_data/user_for_printing/name"/> (<xsl:value-of select="notification_data/user_for_printing/email"/>)
+                <b>@@requested_for@@: 
+                            <xsl:value-of select="notification_data/user_for_printing/name"/>
                 </b>
             </h1>
 
