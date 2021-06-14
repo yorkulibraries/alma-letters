@@ -327,36 +327,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     </xsl:when>
                     <xsl:otherwise>
 
-                        <p><strong>Books Available for Pickup at our Hold 'n Go Lockers</strong></p>
+                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker">Keele Library Lockers</a>.</p>
 
+                        <p>The item will be held for you until <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/></p>
 
-                        <p>One or more of the books you requested are available for pick up at the YorkU Libraries' Keele Hold 'n Go Lockers, your items will be held for 3 business days only. The lockers are located outside the Scott Library doors, in Central Square. </p>
-
-                        <img alt="Hold 'n Go Lockers" src="https://www.library.yorku.ca/scott-lockers.png"/>
-
-                        <p>Central Square will be open from 8am to 7pm, Monday to Friday. and can be accessed by the side doors at the Vari Hall entrance. Please bring your YU card. If you don’t have a YU-card, please email askusyul@yorku.ca or call 416-736-5181 to receive a barcode number that will open your locker. </p>
-
-                        <p>For more information on how to access the Hold 'n Go Lockers, please click on <a href=" https://researchguides.library.yorku.ca/covid19services/curbside#LockerInstructions">this link</a>. Those with accessibility issues may wish to contact us to ensure we can support your use of our resources and facilities. York University Libraries (<a href="mailto:askusyul@yorku.ca">askusyul@yorku.ca</a>) | 416-736-5181</p>
-
-                        <p><strong>The Book(s) Available for Pickup </strong></p>
-
+                        <p><b>Available for Pickup</b></p>
                         <p><i><xsl:call-template name="recordTitle" /></i></p>
 
-                        <p><strong>Health and Safety</strong></p>
+                        <p>Please bring your YU card. If you don’t have a YU-card, email <a href="mailto:askusyul@yorku.ca">askusyul@yorku.ca</a> or call 416-736-5181 to receive a barcode number that will open your locker. You must complete a <a href="https://yubettertogether.info.yorku.ca/appendix-a/">Covid-19 self-screening</a> prior to coming to campus and <a href="https://www.yorku.ca/bettertogether/wp-content/uploads/sites/299/2021/04/Mask-or-Face-Covering-FAQs-April-2021-Update_DFedits.pdf">follow YU mask guidelines</a>.</p>
 
-                        <p>Everyone attending campus must complete the <a href="https://yubettertogether.info.yorku.ca/appendix-a/">screening checklist</a>. If you answer YES to any one of the questions, you are not to attend any York campus/location.</p>
 
-                        <p>While on campus, you are expected to:</p>
-                        <ul>
-                        <li>Maintain a physical distance of 2m (6 feet) from others</li>
-                        <li>Practice frequent hand hygiene </li>
-                        <li>Practice respiratory etiquette by coughing and sneezing into your sleeve</li>
-                        <li>Wear a non-medical face and nose covering</li>
-                        </ul>
-
-                        <p>Kind regards,</p>
-
-                        <p>York Libraries</p>
+                        
                         
                     </xsl:otherwise>
                 </xsl:choose>
