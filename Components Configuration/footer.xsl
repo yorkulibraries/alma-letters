@@ -9,15 +9,18 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 </xsl:template>
 
 <xsl:template name="lastFooter">
-    <table> 
-        <xsl:attribute name="style"> 
-            <xsl:call-template name="footerTableStyleCss" />  
-        </xsl:attribute> 
-        <tr> 
-            <p>For inquiries regarding UIT borrowed laptops, please email <a href="mailto:AskIT@yorku.ca">AskIT@yorku.ca</a>.</p>
-            <p>If you have questions or need assistance, please contact us: <a href="mailto:askusyul@yorku.ca"> York University Libraries </a>(askusyul@yorku.ca) | 416-736-5181. For Osgoode-related inquiries, please contact <a href="mailto:library@osgoode.yorku.ca"> library@osgoode.yorku.ca</a> | 416-736-5206. </p> 
-        </tr> 
-    </table> 
+    <xsl:choose>
+        <xsl:when test="(/notification_data/general_data/letter_name != 'Requested Library Item is Available for Pickup')">
+            <table> 
+                <xsl:attribute name="style"> 
+                    <xsl:call-template name="footerTableStyleCss" />  
+                </xsl:attribute> 
+                <tr> 
+                    <xsl:call-template name="york_lastFooter"/> 
+                </tr> 
+            </table> 
+        </xsl:when>
+    </xsl:choose>
 </xsl:template> 
 
 <xsl:template name="contactUs">
@@ -52,6 +55,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </table>
 </xsl:template>
 
+<xsl:template name="york_lastFooter">
+    <p>For inquiries regarding UIT borrowed laptops, please email <a href="mailto:AskIT@yorku.ca">AskIT@yorku.ca</a>.</p>
+    <p>If you have questions or need assistance, please contact us: <a href="mailto:askusyul@yorku.ca">York University Libraries</a> (askusyul@yorku.ca) | 416-736-5181.</p>
+    <p>For Osgoode-related inquiries, please contact <a href="mailto:library@osgoode.yorku.ca">library@osgoode.yorku.ca</a> | 416-736-5206. </p> 
+</xsl:template>
+
+<xsl:template name="york_lastFooter_fr">
+    <p>Pour des questions concernant les ordinateurs portables empruntés de UIT, veuillez contacter <a href="mailto:AskIT@yorku.ca">AskIT@yorku.ca</a>.</p> 
+    <p>Si vous avez des questions, veuillez nous contacter : <a href="mailto:askusyul@yorku.ca">Les bibliothèques YorkU</a> (askusyul@yorku.ca) | 416-736-5181.</p> 
+    <p>Pour des questions concernant la bibliothèque Osgoode, veuillez contacter  <a href="mailto:library@osgoode.yorku.ca">library@osgoode.yorku.ca</a> | 416-736-5206.</p> 
+</xsl:template>
 
 <!-- AFN CODE -->
 
@@ -231,8 +245,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:otherwise>
                 <tr>
                     <!-- AFN TODO -->
-                    <p>For inquiries regarding UIT borrowed laptops, please email <a href="mailto:AskIT@yorku.ca">AskIT@yorku.ca</a>.</p>
-                    <p>For information about your loans, please check your account in <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/login?vid=01OCUL_YOR:YOR_DEFAULT">Omni</a>. If you have questions or need assistance, please contact us: <a href="mailto:askusyul@yorku.ca"> York University Libraries </a>(askusyul@yorku.ca) | 416-736-5181. For Osgoode-related inquiries, please contact <a href="mailto:library@osgoode.yorku.ca"> library@osgoode.yorku.ca</a> | 416-736-5206. </p> 
+                    <xsl:call-template name="lastFooter"/>
                     <!-- END OF AFN TODO -->
                 </tr>
             </xsl:otherwise>                
@@ -508,7 +521,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     </xsl:when>
                     <xsl:otherwise>                     
                         <!-- AFN TODO -->
-                        <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
+                        <xsl:choose>
+                            <xsl:when test="(/notification_data/general_data/letter_name != 'Requested Library Item is Available for Pickup')">
+                                <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
+                            </xsl:when>
+                        </xsl:choose>
                         <!-- END OF AFN TODO -->
                     </xsl:otherwise>
                 </xsl:choose>   
