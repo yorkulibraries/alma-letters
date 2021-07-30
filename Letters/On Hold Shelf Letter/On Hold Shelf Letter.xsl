@@ -72,6 +72,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                 <td><xsl:value-of select="notification_data/request/system_notes"/></td>
                                             </tr>
 
+                                        <!-- AFN-VERSION 1.2 moved /xsl:if closing tag below system_notes tr -->
+                                        </xsl:if>                                       
                                             <tr>
                                                 <td>
                                                     <br/>      
@@ -81,7 +83,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                 </td>
                                             </tr>
 
-                                        </xsl:if>                                       
                                     </table>                                
                                 </xsl:when> 
                                 <xsl:otherwise>

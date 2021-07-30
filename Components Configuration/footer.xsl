@@ -141,7 +141,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                     </p>
                                 </xsl:when>         
                                 <xsl:when test="$external_id = '01OCUL_LU' ">
-                                    <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800 / @LaurentianLib </p>
+                                    <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> omni@laurentian.ca / 705-675-4800</p>
                                 </xsl:when>             
                                 <xsl:when test="$external_id = '01OCUL_NIP' ">
                                     <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:circdesk@eclibrary.ca"> circdesk@eclibrary.ca</a> | 705-474-3450, ext. 4222 </p>
@@ -202,7 +202,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                     </p>                                    
                                 </xsl:when>         
                                 <xsl:when test="$external_id = '01OCUL_LU' ">
-                                    <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800 / @LaurentianLib </p>
+                                    <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:omni@laurentian.ca"> omni@laurentian.ca</a> / 705-675-4800</p>
                                 </xsl:when> 
                                 <xsl:when test="$external_id = '01OCUL_NIP' ">
                                     <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:circdesk@eclibrary.ca"> circdesk@eclibrary.ca</a> | 705-474-3450, ext. 4222 </p>

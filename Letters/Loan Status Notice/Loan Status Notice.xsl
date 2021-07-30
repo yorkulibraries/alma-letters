@@ -181,6 +181,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                 <b>@@recall_and_no_date_change@@</b>
                                             </xsl:if>
                                             <xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
+                                                <!-- AFN-VERSION 1.2 -->
                                                 <b>@@message@@</b>                      
                                             </xsl:if>
                                             <xsl:if test="notification_data/message='RECALL_CANCEL_RESTORE_ORIGINAL_DUEDATE'">
