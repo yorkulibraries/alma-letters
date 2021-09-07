@@ -184,7 +184,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <h2>Health &amp; Safety</h2>
 
                 <ul>
-                <li><a href="https://www.library.yorku.ca/covid-self-screen.pdf" target="_blank"> Self-screen!</a> If you are sick, do not visit campus</li>
+                <li><a href="https://yorku.ubixhealth.com/login" target="_blank">YU Screen</a>. If you are sick, do not visit campus</li>
 
                 <li>Maintain a physical distance of 2m (6 feet) from others</li>
 
@@ -248,7 +248,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <p><b>Available for Pickup</b></p>
         <p><i><xsl:call-template name="recordTitle" /></i></p>
 
-        <p>Please bring your YU card. If you don’t have a YU-card, email <a href="mailto:askusyul@yorku.ca">askusyul@yorku.ca</a> or call 416-736-5181 to receive a barcode number that will open your locker. You must complete a <a href="https://yubettertogether.info.yorku.ca/appendix-a/">Covid-19 self-screening</a> prior to coming to campus and <a href="https://www.yorku.ca/bettertogether/wp-content/uploads/sites/299/2021/04/Mask-or-Face-Covering-FAQs-April-2021-Update_DFedits.pdf">follow YU mask guidelines</a>.</p>
+        <p>Please bring your YU card. If you don’t have a YU-card, email <a href="mailto:askusyul@yorku.ca">askusyul@yorku.ca</a> or call 416-736-5181 to receive a barcode number that will open your locker. You must complete a <a href="https://yorku.ubixhealth.com/login">Covid-19 self-screening</a> prior to coming to campus and <a href="https://www.yorku.ca/bettertogether/wp-content/uploads/sites/299/2021/04/Mask-or-Face-Covering-FAQs-April-2021-Update_DFedits.pdf">follow YU mask guidelines</a>.</p>
 
         <p><a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en">Login to My Account</a></p>
 
