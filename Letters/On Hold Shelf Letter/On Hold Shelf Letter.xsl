@@ -159,7 +159,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:template name="org_yul_locker_pickup">
         <xsl:choose>
-            <xsl:when test="/notification_data/organization_unit/name = 'Osgoode Hall Law School Library' ">
+            <xsl:when test="/notification_data/request/calculated_destination_name = 'Osgoode Hall Law School Library' ">
 
                 <h2>Osgoode Curbside Pickup</h2>
 
