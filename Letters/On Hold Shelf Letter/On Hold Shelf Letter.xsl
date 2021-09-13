@@ -205,7 +205,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <p><b>(English follows)</b></p>
                         <p><b>Document demandé de la bibliothèque est disponible pour la collecte</b></p>
 
-                        <p>Le document suivant, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être ramassé aux <a href="https://researchguides.library.yorku.ca/servicescovid19/collecte"><xsl:call-template name="york_formatted_pickup_location"/></a>.</p>
+                        <p>Le document suivant, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être ramassé aux <xsl:call-template name="york_formatted_pickup_location"/>.</p>
 
                         <p>Le document sera disponible jusqu’au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/></p>
 
@@ -220,15 +220,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
                         <p><b>Requested Library Item is Available for Pickup</b></p>
 
-                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker"><xsl:call-template name="york_formatted_pickup_location"/></a>.</p>
 
                         <xsl:call-template name="york_on_hold_shelf_english_common"/>
 
 
                     </xsl:when>
                     <xsl:otherwise>
-
-                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker"><xsl:call-template name="york_formatted_pickup_location"/></a>.</p>
 
                         <xsl:call-template name="york_on_hold_shelf_english_common"/>
                         
@@ -241,6 +238,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </xsl:template>
 
     <xsl:template name="york_on_hold_shelf_english_common">
+        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <xsl:call-template name="york_formatted_pickup_location"/>.</p>
+
         <p>The item will be held for you until <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/></p>
 
         <p><b>Available for Pickup</b></p>
@@ -252,12 +251,31 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </xsl:template>
 
     <xsl:template name="york_formatted_pickup_location">
+        <xsl:element name="a">
+            <xsl:attribute name="href">
+                <xsl:call-template name="york_pickup_location_link"/>
+            </xsl:attribute>
+            <xsl:choose>
+                <xsl:when test="contains(/notification_data/request/calculated_destination_name, ' - ')">
+                    <xsl:value-of select="substring-before(/notification_data/request/calculated_destination_name,' - ')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:element>
+    </xsl:template>
+
+    <xsl:template name="york_pickup_location_link">
         <xsl:choose>
-            <xsl:when test="contains(/notification_data/request/calculated_destination_name, ' - ')">
-                <xsl:value-of select="substring-before(/notification_data/request/calculated_destination_name,' - ')"/>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
+                <xsl:value-of select="'https://rooms.osgoode.yorku.ca/reserve/osgoodecurbside'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon') or contains(/notification_data/request/calculated_destination_name, 'Frost')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/servicescovid19/collecte'"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker'"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
