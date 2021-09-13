@@ -200,7 +200,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
             <xsl:otherwise>
                 <xsl:choose>
-                    <xsl:when test="/notification_data/request/calculated_destination_name = 'Leslie Frost Library - Frost Circulation' ">
+                    <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon') ">
 
                         <p><b>(English follows)</b></p>
                         <p><b>Document demandé de la bibliothèque est disponible pour la collecte</b></p>
@@ -212,8 +212,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <p><b>Disponible pour la collecte</b></p>
                         <p><i><xsl:call-template name="recordTitle" /></i></p>
 
-                        <p>Veuillez s’il-vous-plaît apporter votre carte YU. Si vous n’avez pas la carte YU, veuillez envoyer un courriel à <a href="mailto:askusyul@yorku.ca">askusyul@yorku.ca</a> ou appelez 416-736-5181 afin de recevoir un numéro de code-barre pour ouvrir votre casier. Vous devez compléter un <a href="https://www.yorku.ca/bettertogether/annexe-a-2/?lang=fr">questionnaire de dépistage de la COVID-19</a> avant de venir sur le campus et suivre les <a href="https://yubettertogether.info.yorku.ca/files/2021/04/Mask-or-Face-Covering-FAQs-Mar-2021_fr_CA.pdf?x76329">directives sur le port de masque</a>.</p>
-
                         <p><a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=fr">Connecter à mon compte</a></p>
 
                         <xsl:call-template name="york_lastFooter_fr"/>
@@ -222,7 +220,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
                         <p><b>Requested Library Item is Available for Pickup</b></p>
 
-                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker">Glendon Library Lockers</a>.</p>
+                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker"><xsl:value-of select="/notification_data/request/calculated_destination_name"/></a>.</p>
 
                         <xsl:call-template name="york_on_hold_shelf_english_common"/>
 
@@ -230,7 +228,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     </xsl:when>
                     <xsl:otherwise>
 
-                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker">Keele Library Lockers</a>.</p>
+                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker"><xsl:value-of select="/notification_data/request/calculated_destination_name"/></a>.</p>
 
                         <xsl:call-template name="york_on_hold_shelf_english_common"/>
                         
@@ -247,8 +245,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
         <p><b>Available for Pickup</b></p>
         <p><i><xsl:call-template name="recordTitle" /></i></p>
-
-        <p>Please bring your YU card. If you don’t have a YU-card, email <a href="mailto:askusyul@yorku.ca">askusyul@yorku.ca</a> or call 416-736-5181 to receive a barcode number that will open your locker. You must complete a <a href="https://yorku.ubixhealth.com/login">Covid-19 self-screening</a> prior to coming to campus and <a href="https://www.yorku.ca/bettertogether/wp-content/uploads/sites/299/2021/04/Mask-or-Face-Covering-FAQs-April-2021-Update_DFedits.pdf">follow YU mask guidelines</a>.</p>
 
         <p><a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en">Login to My Account</a></p>
 

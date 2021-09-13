@@ -56,12 +56,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 </xsl:template>
 
 <xsl:template name="york_lastFooter">
+    <p>You must complete <a href="https://yorku.ubixhealth.com/login">YU Screen</a> prior to coming to campus.</p>
     <p>For inquiries regarding UIT borrowed laptops, please email <a href="mailto:AskIT@yorku.ca">AskIT@yorku.ca</a>.</p>
     <p>If you have questions or need assistance, please contact us: <a href="mailto:askusyul@yorku.ca">York University Libraries</a> (askusyul@yorku.ca) | 416-736-5181.</p>
     <p>For Osgoode-related inquiries, please contact <a href="mailto:library@osgoode.yorku.ca">library@osgoode.yorku.ca</a> | 416-736-5206. </p> 
 </xsl:template>
 
 <xsl:template name="york_lastFooter_fr">
+    <p>Vous devez compléter un <a href="https://yorku.ubixhealth.com/login">YU Dépistage</a> avant de venir sur le campus.</p>
     <p>Pour des questions concernant les ordinateurs portables empruntés de UIT, veuillez contacter <a href="mailto:AskIT@yorku.ca">AskIT@yorku.ca</a>.</p> 
     <p>Si vous avez des questions, veuillez nous contacter : <a href="mailto:askusyul@yorku.ca">Les bibliothèques YorkU</a> (askusyul@yorku.ca) | 416-736-5181.</p> 
     <p>Pour des questions concernant la bibliothèque Osgoode, veuillez contacter  <a href="mailto:library@osgoode.yorku.ca">library@osgoode.yorku.ca</a> | 416-736-5206.</p> 
