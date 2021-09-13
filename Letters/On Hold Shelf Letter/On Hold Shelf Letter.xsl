@@ -200,12 +200,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
             <xsl:otherwise>
                 <xsl:choose>
-                    <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon') ">
+                    <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon') or contains(/notification_data/request/calculated_destination_name, 'Frost')">
 
                         <p><b>(English follows)</b></p>
                         <p><b>Document demandé de la bibliothèque est disponible pour la collecte</b></p>
 
-                        <p>Le document suivant, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être ramassé aux <a href="https://researchguides.library.yorku.ca/servicescovid19/collecte">casiers de Glendon</a>.</p>
+                        <p>Le document suivant, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être ramassé aux <a href="https://researchguides.library.yorku.ca/servicescovid19/collecte"><xsl:call-template name="york_formatted_pickup_location"/></a>.</p>
 
                         <p>Le document sera disponible jusqu’au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/></p>
 
@@ -220,7 +220,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
                         <p><b>Requested Library Item is Available for Pickup</b></p>
 
-                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker"><xsl:value-of select="/notification_data/request/calculated_destination_name"/></a>.</p>
+                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker"><xsl:call-template name="york_formatted_pickup_location"/></a>.</p>
 
                         <xsl:call-template name="york_on_hold_shelf_english_common"/>
 
@@ -228,7 +228,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     </xsl:when>
                     <xsl:otherwise>
 
-                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker"><xsl:value-of select="/notification_data/request/calculated_destination_name"/></a>.</p>
+                        <p>The following item, which you requested on <xsl:value-of select="notification_data/request/create_date"/> can be picked up at the <a href="https://researchguides.library.yorku.ca/covid19services/locker"><xsl:call-template name="york_formatted_pickup_location"/></a>.</p>
 
                         <xsl:call-template name="york_on_hold_shelf_english_common"/>
                         
@@ -249,5 +249,16 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <p><a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en">Login to My Account</a></p>
 
         <xsl:call-template name="york_lastFooter"/>
+    </xsl:template>
+
+    <xsl:template name="york_formatted_pickup_location">
+        <xsl:choose>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, ' - ')">
+                <xsl:value-of select="substring-before(/notification_data/request/calculated_destination_name,' - ')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
