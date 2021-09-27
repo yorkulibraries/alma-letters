@@ -205,7 +205,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <p><b>(English follows)</b></p>
                         <p><b>Document demandé de la bibliothèque est disponible pour la collecte</b></p>
 
-                        <p>Le document suivant, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être ramassé aux <xsl:call-template name="york_formatted_pickup_location"/>.</p>
+                        <p>Le document suivant, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être ramassé aux <xsl:call-template name="york_formatted_pickup_location_fr"/>.</p>
 
                         <p>Le document sera disponible jusqu’au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/></p>
 
@@ -266,13 +266,66 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         </xsl:element>
     </xsl:template>
 
+    <xsl:template name="york_formatted_pickup_location_fr">
+        <xsl:element name="a">
+            <xsl:attribute name="href">
+                <xsl:call-template name="york_pickup_location_link_fr"/>
+            </xsl:attribute>
+            <xsl:choose>
+                <xsl:when test="contains(/notification_data/request/calculated_destination_name, ' - ')">
+                    <xsl:value-of select="substring-before(/notification_data/request/calculated_destination_name,' - ')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:element>
+    </xsl:template>
+
     <xsl:template name="york_pickup_location_link">
         <xsl:choose>
             <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
                 <xsl:value-of select="'https://rooms.osgoode.yorku.ca/reserve/osgoodecurbside'"/>
             </xsl:when>
-            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon') or contains(/notification_data/request/calculated_destination_name, 'Frost')">
-                <xsl:value-of select="'https://researchguides.library.yorku.ca/servicescovid19/collecte'"/>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-2'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Frost')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-3'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Steacie')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-3'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Scott')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-3'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Bronfman')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-3'"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker'"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template name="york_pickup_location_link_fr">
+        <xsl:choose>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
+                <xsl:value-of select="'https://rooms.osgoode.yorku.ca/reserve/osgoodecurbside'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/servicescovid19/collecte#s-lib-ctab-16192952-2'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Frost')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/servicescovid19/collecte#s-lib-ctab-16192952-3'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Steacie')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-3'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Scott')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-3'"/>
+            </xsl:when>
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Bronfman')">
+                <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-3'"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker'"/>
