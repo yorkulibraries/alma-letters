@@ -324,7 +324,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template name="york_pickup_location_link_fr">
         <xsl:choose>
             <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
-                <xsl:value-of select="'https://rooms.osgoode.yorku.ca/reserve/osgoodecurbside'"/>
+                <xsl:value-of select="'https://www.osgoode.yorku.ca/library/libraryservices/covid-19-osgoode-library-faq/'"/>
             </xsl:when>
             <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon')">
                 <xsl:value-of select="'https://researchguides.library.yorku.ca/servicescovid19/collecte#s-lib-ctab-16192952-2'"/>
