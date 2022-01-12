@@ -260,7 +260,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:value-of select="substring-before(/notification_data/request/calculated_destination_name,' - ')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
+                    <xsl:choose>
+                        <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
+                            <xsl:value-of select="/notification_data/request/calculated_destination_name"/> Book Lockers
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:element>
@@ -276,7 +283,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:value-of select="substring-before(/notification_data/request/calculated_destination_name,' - ')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
+                    <xsl:choose>
+                        <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
+                            <xsl:value-of select="/notification_data/request/calculated_destination_name"/> Book Lockers
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:element>
@@ -285,7 +299,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template name="york_pickup_location_link">
         <xsl:choose>
             <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
-                <xsl:value-of select="'https://rooms.osgoode.yorku.ca/reserve/osgoodecurbside'"/>
+                <xsl:value-of select="'https://www.osgoode.yorku.ca/library/libraryservices/covid-19-osgoode-library-faq/'"/>
             </xsl:when>
             <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Glendon')">
                 <xsl:value-of select="'https://researchguides.library.yorku.ca/covid19services/locker#s-lib-ctab-16191987-2'"/>
