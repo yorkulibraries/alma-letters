@@ -159,7 +159,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:template name="org_yul_locker_pickup">
         <xsl:choose>
-            <xsl:when test="/notification_data/request/calculated_destination_name = 'Osgoode Hall Law School Library' ">
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Law')">
 
                 <h2>Osgoode Curbside Pickup</h2>
 
@@ -261,7 +261,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:choose>
-                        <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
+                        <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Law')">
                             <xsl:value-of select="/notification_data/request/calculated_destination_name"/> Book Lockers
                         </xsl:when>
                         <xsl:otherwise>
@@ -284,7 +284,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:choose>
-                        <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Osgoode')">
+                        <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Law')">
                             <xsl:value-of select="/notification_data/request/calculated_destination_name"/> Book Lockers
                         </xsl:when>
                         <xsl:otherwise>
