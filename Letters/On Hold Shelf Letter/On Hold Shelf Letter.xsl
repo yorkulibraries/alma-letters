@@ -159,7 +159,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:template name="org_yul_locker_pickup">
         <xsl:choose>
-            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Law')">
+            <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'THIS IS DISABLED AND SHOULD NOT MATCH')">
 
                 <h2>Osgoode Curbside Pickup</h2>
 
@@ -260,14 +260,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:value-of select="substring-before(/notification_data/request/calculated_destination_name,' - ')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Law')">
-                            <xsl:value-of select="/notification_data/request/calculated_destination_name"/> Book Lockers
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
+                    <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:element>
@@ -283,14 +276,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:value-of select="substring-before(/notification_data/request/calculated_destination_name,' - ')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="contains(/notification_data/request/calculated_destination_name, 'Law')">
-                            <xsl:value-of select="/notification_data/request/calculated_destination_name"/> Book Lockers
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
+                    <xsl:value-of select="/notification_data/request/calculated_destination_name"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:element>
