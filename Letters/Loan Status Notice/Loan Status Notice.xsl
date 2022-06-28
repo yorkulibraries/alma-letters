@@ -58,8 +58,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                         <b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé et la date de retour original a été rétablie. Voir ci-dessous pour la mise à jour de la (des) date(s) d'échéance.</b>
                                                     </xsl:if>
                                                     <xsl:if test="notification_data/message='RECALL_CANCEL_ITEM_RENEWED'">
-                                                        <!-- AFN-VERSION 1.1 -->
-                                                        <b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé. Le prêt a été renouvelé. Voir ci-dessous pour la mise à jour de la (des) date(s) d'échéance.</b>
+                                                        <!-- AFN-VERSION 1.6 -->
+                                                        <b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé. Il n'y a pas de changement dans la (les) date(s) d'échéance.</b>
                                                     </xsl:if>
                                                     <xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
                                                         <!-- AFN-VERSION 1.1 -->
@@ -87,8 +87,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                              -->
                                                             <th>Titre</th>                          
                                                             <th>Auteur</th>
-                                                            <th>Date d'échéance initiale</th>
-                                                            <th>Date d'échéance révisée</th>
+                                                            <!-- AFN VERSION 1.6 changed some french text -->
+                                                            <th>Ancienne date de retour</th>
+                                                            <th>Nouvelle date de retour</th>
+                                                            <!-- END OF AFN VERSION 1.6 changed some french text -->
                                                             <th>Bibliothèque</th>
                                                         </tr>
 

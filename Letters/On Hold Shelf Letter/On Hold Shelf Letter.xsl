@@ -40,7 +40,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                     <table cellspacing="0" cellpadding="5" border="0">
                                         <tr>
                                             <td>
-                                                L'élément suivant de <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé sur <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
+                                                <!-- AFN VERSION 1.6 changed some french text -->
+                                                Le document suivant de <xsl:value-of select="notification_data/phys_item_display/owning_library_name"/>, que vous avez demandé le <xsl:value-of select="notification_data/request/create_date"/> peut être récupéré à <b><xsl:value-of select="notification_data/request/delivery_address"/></b>
                                             </td>
                                         </tr>
 
@@ -48,7 +49,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                             <tr>
                                                 <td>
                                                     <br/>
-                                                    L'article sera conservé pour vous jusqu'au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
+                                                    <!-- AFN VERSION 1.6 changed some french text -->
+                                                    Le document sera conservé pour vous jusqu'au <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date"/>
                                                 </td>
                                             </tr>
                                         </xsl:if>
@@ -77,8 +79,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                             <tr>
                                                 <td>
                                                     <br/>      
-                                                    <!-- AFN-VERSION 1.1 -->
-                                                    Pour connaitre les heures de service et les informations sur le ramassage, veuillez consulter la page web de la bibliothèque sur le ramassage, donnée ci-dessus.
+                                                    <!-- AFN VERSION 1.6 changed some french text -->
+                                                    Pour connaitre les heures de service et des informations liées à la récupération de documents veuillez consulter ci-dessus la page web de la bibliothèque.
                                                     <br/>
                                                 </td>
                                             </tr>

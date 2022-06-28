@@ -55,7 +55,10 @@
                                     <!-- for AFN we're ONLY going to show when on hold shelf -->
                                     <xsl:if test="notification_data/hold_shelf_requests/ful_request_interpated">
                                         <tr>
-                                            <h>Le(s)document(s) que vous avez demandé(s) de <xsl:value-of select="notification_data/organization_unit/name"/> est(sont) maintenant prêt(s) à être récupéré(s) au lieu de ramassage indiqué:</h>
+                                            <td>
+                                                <!-- AFN VERSION 1.6 changed some french text -->
+                                                Le(s)document(s) que vous avez demandé(s) de <xsl:value-of select="notification_data/organization_unit/name"/> est (sont) maintenant prêt(s) à être récupéré(s) au lieu de ramassage indiqué:
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -80,7 +83,8 @@
                                                         <th>Type</th>
                                                         <th>Titre</th>
                                                         <th>Auteur</th>
-                                                        <th>Statut</th>
+                                                        <!-- AFN VERSION 1.6 changed some french text -->
+                                                        <th>État</th>
                                                         <th>Lieu de ramassage</th>
                                                     </tr>
                                                     <xsl:for-each select="notification_data/hold_shelf_requests/ful_request_interpated">

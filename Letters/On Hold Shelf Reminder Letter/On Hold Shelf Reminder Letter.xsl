@@ -39,7 +39,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                 <table role='presentation' cellspacing="0" cellpadding="5" border="0">  
                                     <tr>
                                         <td>
-                                            Veuillez noter que les éléments suivants que vous avez demandés <b><xsl:value-of select="notification_data/organization_unit/name"/></b> attendent d'être récupérés au lieu de prise en charge indiqué:
+                                            <!-- AFN VERSION 1.6 changed some french text -->                                            
+                                            Veuillez noter que le(s) document(s) suivant(s) que vous avez demandé(s) de <b><xsl:value-of select="notification_data/organization_unit/name"/></b> est (sont) en attente d’être récupéré(s) au lieu de ramassage indiqué:
                                         </td>
                                     </tr>
 
@@ -61,7 +62,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                         <th>Titre</th>
                                                         <th>Auteur</th>
                                                         <th>Peut être retiré auprès de :</th>
-                                                        <th>L''exemplaire sera réservé à votre nom jusqu''au</th>
+                                                        <!-- AFN VERSION 1.6 changed some french text -->                                            
+                                                        <th>L'exemplaire sera réservé à votre nom jusqu'au</th>
                                                     </tr>
 
                                                     <xsl:for-each select="requests/request_for_display">
@@ -87,8 +89,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                     </xsl:attribute>
                                                     <tr align="center" bgcolor="#f5f5f5">
                                                         <td colspan="4">
-                                                            <!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
-                                                            <h3>Exemplaires à retirer auprès d''autres institutions</h3>
+                                                            <!-- AFN VERSION 1.6 changed some french text -->
+                                                            <h3>Exemplaires à retirer auprès d'autres institutions</h3>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -101,7 +103,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                         <th>Titre</th>
                                                         <th>Auteur</th>
                                                         <th>Peut être retiré auprès de :</th>
-                                                        <th>L''exemplaire sera réservé à votre nom jusqu''au</th>
+                                                        <!-- AFN VERSION 1.6 changed some french text -->
+                                                        <th>L'exemplaire sera réservé à votre nom jusqu'au</th>
+
                                                     </tr>
 
                                                     <xsl:for-each select="notification_data/out_of_institution_requests/request_for_display">

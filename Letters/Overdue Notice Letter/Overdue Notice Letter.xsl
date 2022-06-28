@@ -38,7 +38,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                             <table cellspacing="0" cellpadding="5" border="0">
                                 <tr>
                                     <td>
-                                        <b>Le(s) document(s) suivant(s) de <xsl:value-of select="notification_data/organization_unit/name"/> est (sont) à rendre aujourd'hui. Veuillez retourner le(s) document(s) à votre bibliothèque, ou, pour les renouveler:</b>
+                                        <!-- AFN VERSION 1.6 changed some french text -->
+                                        <b>Le(s) document(s) suivant(s) de <xsl:value-of select="notification_data/organization_unit/name"/> est (sont) à rendre aujourd'hui. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement:</b>
                                         <br/>                                        
                                     </td>
                                 </tr>
@@ -52,7 +53,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
                                 <tr>
                                     <td>
-                                        2. Cliquez sur l' <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> option à la gauche et renouvelez le(s) document(s)
+                                        <!-- AFN VERSION 1.6 changed some french text -->
+                                        2. Cliquez sur <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> à la gauche et renouvelez le(s) document(s)
                                     </td>
                                 </tr>   
 
@@ -72,7 +74,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                 -->
                                                 <th>Titre</th>
                                                 <th>Auteur</th>
-                                                <th>Date d'échéance</th>
+                                                <!-- AFN VERSION 1.6 changed some french text -->
+                                                <th>Date de retour</th>
                                                 <th>Bibliothèque</th>                                                
                                             </tr>
 

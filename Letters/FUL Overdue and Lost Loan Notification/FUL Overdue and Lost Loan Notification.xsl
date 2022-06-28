@@ -71,8 +71,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                         <th>Bibliothèque</th>
                                                         <th>Date de prêt</th>
                                                         <th>Date de retour</th>                                     
-                                                        <th>Appel Nombre</th>
-                                                        <th>Frais connexes</th>
+                                                        <!-- AFN VERSION 1.6 changed some french text -->
+                                                        <th>Cote</th>
+                                                        <th>Frais</th>
+                                                        <!-- END OF AFN VERSION 1.6 changed some french text -->
                                                     </tr>
 
                                                     <xsl:for-each select="item_loans/overdue_and_lost_loan_notification_display">
@@ -84,7 +86,19 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                             <td><xsl:value-of select="physical_item_display_for_printing/call_number"/></td>
                                                             <td>
                                                                 <xsl:for-each select="fines_fees_list/user_fines_fees">
-                                                                    <b><xsl:value-of select="fine_fee_type_display"/>: </b><xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
+                                                                    <!-- AFN VERSION 1.6 changed some french text -->                                      
+                                                                    <xsl:choose>
+                                                                        <xsl:when test="fine_fee_type_display = 'Lost item process fee' ">
+                                                                            <b>Frais de traitement - document perdu: </b><xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
+                                                                        </xsl:when>
+                                                                        <xsl:when test="fine_fee_type_display = 'Lost item replacement fee' ">
+                                                                            <b>Frais de remplacements - document perdu: </b><xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
+                                                                        </xsl:when>
+                                                                        <xsl:otherwise>
+                                                                            <b><xsl:value-of select="fine_fee_type_display"/>: </b><xsl:value-of select="fine_fee_ammount/normalized_sum"/>&#160;<xsl:value-of select="ff"/>
+                                                                        </xsl:otherwise>
+                                                                    </xsl:choose>
+                                                                    <!-- END OF AFN VERSION 1.6 changed some french text -->
                                                                     <br />
                                                                 </xsl:for-each>
                                                             </td>

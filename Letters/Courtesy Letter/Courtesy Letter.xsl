@@ -39,8 +39,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                             <!-- handle AFN default language fr -->
                             <table cellspacing="0" cellpadding="5" border="0">
                                 <tr>
-                                    <td>                                        
-                                        Le(s) document(s) suivant(s) de <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> arrive(nt) à échéance. Veuillez retourner le(s) document(s) à votre bibliothèque, ou, pour les renouveler:
+                                    <td>
+                                        <!-- AFN VERSION 1.6 changed some french text -->
+                                        Le(s) document(s) suivant(s) de <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> arrive(nt) à échéance. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement:
                                     </td>
                                 </tr>
 
@@ -52,8 +53,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                 </tr>                               
                             
                                 <tr>
-                                    <td>                                        
-                                        2. Cliquez sur <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> option à la gauche et renouvelez le(s).
+                                    <td>
+                                        <!-- AFN VERSION 1.6 changed some french text -->
+                                        2. Cliquez sur <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> à la gauche et renouvelez le(s).
                                     </td>
                                 </tr>                                                               
                             
@@ -73,9 +75,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                 <th>Library</th>
                                                 -->
                                                 <th>Titre</th>
-                                                <th>La description</th>
+                                                <!-- AFN VERSION 1.6 changed some french text -->
+                                                <th>Description</th>
                                                 <th>Auteur</th>
-                                                <th>Date d'échéance</th>
+                                                <!-- AFN VERSION 1.6 changed some french text -->
+                                                <th>Date de retour</th>
                                                 <th>Bibliothèque</th>
                                             </tr>
 

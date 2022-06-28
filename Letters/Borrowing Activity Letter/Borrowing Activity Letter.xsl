@@ -84,7 +84,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                         <tr>
                                                             <th>Titre</th>
                                                             <th>Auteur</th>
-                                                            <th>Date d'échéance</th>
+                                                            <!-- AFN VERSION 1.6 changed some french text -->
+                                                            <th>Date de retour</th>
                                                             <th>Amende</th>
                                                             <th>Bibliothèque</th>
                                                         </tr>
@@ -146,7 +147,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                             <th>Fine</th>
                                                             -->
                                                             <th>Titre</th>
-                                                            <th>Date d'échéance</th>
+                                                            <!-- AFN VERSION 1.6 changed some french text -->
+                                                            <th>Date de retour</th>
                                                             <th>Amende</th>                                                            
                                                         </tr>
 
