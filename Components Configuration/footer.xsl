@@ -75,7 +75,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 </xsl:template>
 
 <xsl:template name="afn_fr_contact_us">
-    Si vous avez des questions ou besoin d'aide, veuillez nous contacter:
+    <!-- AFN VERSION 1.6 changed some french text -->
+    Si vous avez des questions, ou si vous avez besoin d’aide, veuillez nous contacter:
 </xsl:template>
 
 <xsl:variable name="is_afn_patron">
