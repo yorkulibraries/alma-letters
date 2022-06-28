@@ -175,7 +175,19 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                 </xsl:when>
                                 <xsl:when test="$external_id = '01OCUL_YOR' ">
                                     <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
-                                </xsl:when>                                                             
+                                </xsl:when>
+                                <!-- AFN-VERSION 1.7 ADD McMaster & OCADU -->
+                                <xsl:when test="$external_id = '01OCUL_MU' ">
+                                    <p>
+                                        <xsl:call-template name="afn_fr_contact_us" /> <br/>
+                                        Mills/Innis/Thode | <a href="mailto:library@mcmaster.ca"> library@mcmaster.ca</a> | Mills: 905-525-9140 x22077 | Innis: 905-525-9140 x22081 | Thode: 905-525-9140 x22000 <br/>
+                                        Health Sciences Library | <a href="mailto:hslib@mcmaster.ca"> hslib@mcmaster.ca</a>  | 905-525-9140 x22327 <br/>
+                                    </p>
+                                </xsl:when>
+                                <xsl:when test="$external_id = '01OCUL_OCAD' ">
+                                    <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:circulation@ocadu.ca"> circulation@ocadu.ca</a> | 416-977-6000 x358</p>
+                                </xsl:when>
+                                <!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
                             </xsl:choose>                                       
                         </tr>                                   
                     </xsl:when>
@@ -236,7 +248,19 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                 </xsl:when>     
                                 <xsl:when test="$external_id = '01OCUL_YOR' ">
                                     <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:askusyul@yorku.ca"> askusyul@yorku.ca</a> | 416-736-5181</p>
-                                </xsl:when>                                                             
+                                </xsl:when>
+                                <!-- AFN-VERSION 1.7 ADD McMaster & OCADU -->
+                                <xsl:when test="$external_id = '01OCUL_MU' ">
+                                    <p>
+                                        <xsl:call-template name="afn_en_contact_us" /> <br/>
+                                        Mills/Innis/Thode | <a href="mailto:library@mcmaster.ca"> library@mcmaster.ca</a> | Mills: 905-525-9140 x22077 | Innis: 905-525-9140 x22081 | Thode: 905-525-9140 x22000 <br/>
+                                        Health Sciences Library | <a href="mailto:hslib@mcmaster.ca"> hslib@mcmaster.ca</a>  | 905-525-9140 x22327 <br/>
+                                    </p>
+                                </xsl:when>
+                                <xsl:when test="$external_id = '01OCUL_OCAD' ">
+                                    <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:circulation@ocadu.ca"> circulation@ocadu.ca</a> | 416-977-6000 x358</p>
+                                </xsl:when>
+                                <!-- END OF AFN-VERSION 1.7 ADD McMaster & OCADU -->
                             </xsl:choose>                                                                   
                         </tr>               
                     </xsl:otherwise>
