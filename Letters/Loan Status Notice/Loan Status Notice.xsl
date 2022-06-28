@@ -62,8 +62,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                         <b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé. Il n'y a pas de changement dans la (les) date(s) d'échéance.</b>
                                                     </xsl:if>
                                                     <xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
-                                                        <!-- AFN-VERSION 1.1 -->
-                                                        <b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé. Il n'y a pas de changement dans la (les) date(s) d'échéance</b>
+                                                        <!-- AFN-VERSION 1.6 -->
+                                                        <b>Le rappel qui a été fait sur votre (vos) document(s) emprunté(s) a été annulé. Il n'y a pas de changement dans la (les) date(s) d'échéance.</b>
                                                     </xsl:if>
                                                     <br/>
                                                     <br/>
