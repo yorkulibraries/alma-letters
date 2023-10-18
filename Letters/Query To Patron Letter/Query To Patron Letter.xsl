@@ -369,7 +369,49 @@
                                                                                                                                                                                 
                                 </table>
                                 <br />
-                                
+<table role='presentation' >
+
+                            <tr>
+                                <td>@@query_to_patron@@: </td>
+                            </tr>
+                            <xsl:choose>
+                                <xsl:when test="notification_data/query_type = 'Type_1_query_name'">
+                                    <tr>
+                                        <td>@@Type_1_query_line_1@@</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@@Type_1_query_line_2@@</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@@Type_1_query_line_3@@</td>
+                                    </tr>
+                                </xsl:when>
+                                <xsl:when test="notification_data/query_type = 'Type_2_query_name'">
+                                    <tr>
+                                        <td>@@Type_2_query_line_1@@</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@@Type_2_query_line_2@@</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@@Type_2_query_line_3@@</td>
+                                    </tr>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <tr>
+                                        <td>@@Type_1_query_line_1@@</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@@Type_1_query_line_2@@</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@@Type_1_query_line_3@@</td>
+                                    </tr>
+                                </xsl:otherwise>
+                            </xsl:choose>
+
+                        </table>
+                        <br />
                                 <table role='presentation' >
                                     <xsl:if test="notification_data/query_note !=''">
                                         <tr>
