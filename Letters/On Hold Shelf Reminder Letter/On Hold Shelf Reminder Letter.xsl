@@ -9,6 +9,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:include href="style.xsl" />
   <xsl:include href="recordTitle.xsl" />
 
+<!-- START AFN-VERSION 1.8 START Test if it's an EMAIL partner, if so terminate letter -->
+<xsl:variable name="is_email_partner">
+    <xsl:if test="(notification_data/user_for_printing/user_group = 'NZILLUSER') or (notification_data/user/user_group = 'NZILLUSER') or (notification_data/request/user_group = 'NZILLUSER')"> 
+        TRUE        
+    </xsl:if>
+</xsl:variable>
+<!-- END AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
+
   <xsl:template match="/">
     <html>
       <head>
@@ -29,7 +37,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <div class="messageBody">
 
                 <!-- AFN CODE -->
-                <xsl:choose>                            
+                <xsl:choose>          
+                    <!-- START AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
+                    <xsl:when test="(string-length($is_email_partner) > 0)">
+                        <xsl:message terminate="yes">user group is an EMAIL ILL PARTNER - TERMINATE </xsl:message>
+                    </xsl:when>
+                    <!-- END AFN-VERSION 1.8 Test if it's an EMAIL partner, if so terminate letter -->
+
                     <!-- AFN test (is_afn_patron) defined in footer.xsl -->
                     <xsl:when test="(string-length($is_afn_patron) > 0)">   
                         <!-- handle AFN supported languages (is_preferred_lang_fr) defined in footer.xsl-->
@@ -105,7 +119,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                                         <th>Peut être retiré auprès de :</th>
                                                         <!-- AFN VERSION 1.6 changed some french text -->
                                                         <th>L'exemplaire sera réservé à votre nom jusqu'au</th>
-
                                                     </tr>
 
                                                     <xsl:for-each select="notification_data/out_of_institution_requests/request_for_display">
