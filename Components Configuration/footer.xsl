@@ -286,7 +286,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:otherwise>
                 <tr>
                     <!-- AFN TODO -->
-                    <p>AFN PARTNERS: PLACE LOCAL FOOTER TEXT HERE - <a href="mailto:library@uoguelph.ca">library@uoguelph.ca</a> | 519-824-4120 x 53618</p>
+                    <xsl:call-template name="lastFooter"/>
                     <!-- END OF AFN TODO -->
                 </tr>
             </xsl:otherwise>                
@@ -598,7 +598,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     </xsl:when>
                     <xsl:otherwise>                     
                         <!-- AFN TODO -->
-                        <a href="https://ocul-gue.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_GUE:GUELPH">AFN PARTNERS: PLACE LOCAL ACCOUNT INFO HERE</a>
+                        <xsl:choose>
+                            <xsl:when test="(/notification_data/general_data/letter_name != 'Requested Library Item is Available for Pickup')">
+                                <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;lang=en"><xsl:call-template name="afn_en_account_link_text" /></a>
+                            </xsl:when>
+                        </xsl:choose>
                         <!-- END OF AFN TODO -->
                     </xsl:otherwise>
                 </xsl:choose>   
@@ -680,7 +684,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <xsl:otherwise>
             <!-- AFN TODO -->
             <!-- your home institution -->
-            NAME OF HOME INSTITUTION
+            York University
             <!-- END OF AFN TODO -->
         </xsl:otherwise>
     </xsl:choose>
