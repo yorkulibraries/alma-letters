@@ -100,6 +100,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <!-- email partner footer -->
                         <p id="email_partner_financial_contact" align="left">
                             <!-- START AFN TODO Enter your institutions financial contact info -->
+                            <!--
                             Our ILL Responder #: XXXX<br/>
                             (Please quote this number on your remittance)<br/><br/>
                             Please direct inquiries about this payment to:<br/><br/>
@@ -109,6 +110,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                             Fax number: xxx-xxx-xxx <br/>
                             Email: some_account@institution_.ca <br/>
                             Library Code: XXXXX<br/>
+                            -->
                             <!-- END AFN TODO Enter your institutions financial contact info -->
                         </p>                        
                     </xsl:when>
