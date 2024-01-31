@@ -37,120 +37,94 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:choose>
                         <xsl:when test="(string-length($is_preferred_lang_fr) > 0)">
                             <!-- handle AFN default language fr -->
-                            <table cellspacing="0" cellpadding="5" border="0">
+                            <!-- AFN VERSION 1.8 -->
+                            <p>
+                                Le(s) document(s) suivant(s) de <xsl:call-template name="AFNOrgName" /> arrive(nt) à échéance. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement:                                                                
+                            </p>                                
+                            <ol class="afn_steps_list">
+                                <li>
+                                    <!-- use a template from footer.xml with AFN conditional link logic. displays as 1. LINK  -->
+                                    <xsl:call-template name="AFNVisitLoansLink" />
+                                </li>                                   
+                                <li>
+                                    Cliquez sur <xsl:call-template name="AFNOrgName" /> à la gauche et renouvelez le(s).                                        
+                                </li>                                        
+                            </ol>
+                            
+                            <table cellpadding="5" class="listing">
+                                <xsl:attribute name="style">
+                                    <xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
+                                </xsl:attribute>
                                 <tr>
-                                    <td>
-                                        <!-- AFN VERSION 1.6 changed some french text -->
-                                        Le(s) document(s) suivant(s) de <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> arrive(nt) à échéance. Veuillez retourner le(s) document(s) à votre bibliothèque, ou pour un renouvellement:
-                                    </td>
+                                    <!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
+                                    <!--
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Author</th>
+                                    <th>Due Date</th>
+                                    <th>Library</th>
+                                    -->
+                                    <th>Titre</th>
+                                    <th>Description</th>
+                                    <th>Auteur</th>
+                                    <th>Date de retour</th>
+                                    <th>Bibliothèque</th>
                                 </tr>
 
-                                <tr>                                    
-                                    <td>
-                                        <!-- use a template from footer.xml with AFN conditional link logic. displays as 1. LINK  -->
-                                        <xsl:call-template name="AFNVisitLoansLink" />
-                                    </td>
-                                </tr>                               
-                            
+                                <xsl:for-each select="notification_data/item_loans/item_loan">
                                 <tr>
-                                    <td>
-                                        <!-- AFN VERSION 1.6 changed some french text -->
-                                        2. Cliquez sur <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> à la gauche et renouvelez le(s).
-                                    </td>
-                                </tr>                                                               
-                            
-                                <tr>
-                                    <td>
-                                        <table cellpadding="5" class="listing">
-                                            <xsl:attribute name="style">
-                                                <xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
-                                            </xsl:attribute>
-                                            <tr>
-                                                <!-- AFN OFFICIAL TRANSLATION COMING AFN-TRANSLATE -->
-                                                <!--
-                                                <th>Title</th>
-                                                <th>Description</th>
-                                                <th>Author</th>
-                                                <th>Due Date</th>
-                                                <th>Library</th>
-                                                -->
-                                                <th>Titre</th>
-                                                <!-- AFN VERSION 1.6 changed some french text -->
-                                                <th>Description</th>
-                                                <th>Auteur</th>
-                                                <!-- AFN VERSION 1.6 changed some french text -->
-                                                <th>Date de retour</th>
-                                                <th>Bibliothèque</th>
-                                            </tr>
+                                    <td><xsl:value-of select="title"/></td>
+                                    <td><xsl:value-of select="description"/></td>
+                                    <td><xsl:value-of select="author"/></td>
+                                    <td><xsl:value-of select="due_date"/></td>
+                                    <td><xsl:value-of select="library_name"/></td>
 
-                                            <xsl:for-each select="notification_data/item_loans/item_loan">
-                                            <tr>
-                                                <td><xsl:value-of select="title"/></td>
-                                                <td><xsl:value-of select="description"/></td>
-                                                <td><xsl:value-of select="author"/></td>
-                                                <td><xsl:value-of select="due_date"/></td>
-                                                <td><xsl:value-of select="library_name"/></td>
-
-                                            </tr>
-                                            </xsl:for-each>
-
-                                        </table>
-                                    </td>
                                 </tr>
+                                </xsl:for-each>
                             </table>
+                            <!-- END OF AFN VERSION 1.8 -->                         
                         </xsl:when> 
                         <xsl:otherwise>                                                     
                             <!-- handle AFN default language en -->
-                            <table cellspacing="0" cellpadding="5" border="0">                              
-                                <tr>
-                                    <td>                                        
-                                        The following item(s) from <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> are coming due. Please return the item(s) to your library, or, to renew them:                                       
-                                    </td>
-                                </tr>
-
-                                <tr>                                    
-                                    <td>
-                                        <!-- use a template from footer.xml with AFN conditional link logic. displays as 1. LINK  -->
-                                        <xsl:call-template name="AFNVisitLoansLink" />
-                                    </td>
-                                </tr>                               
+                            <!-- AFN VERSION 1.8 -->
+                            <p>
+                                The following item(s) from <xsl:call-template name="AFNOrgName" /> are coming due. Please return the item(s) to your library, or, to renew them:                                
+                            </p>
+                            <ol class="afn_steps_list">
+                                <li>
+                                    <!-- use a template from footer.xml with AFN conditional link logic. displays as 1. LINK  -->
+                                    <xsl:call-template name="AFNVisitLoansLink" />
+                                </li>                                    
+                                <li>
+                                    Click the <xsl:call-template name="AFNOrgName" /> option along the left and renew items
+                                </li>
+                            </ol>
                             
+                            <table cellpadding="5" class="listing">
+                                <xsl:attribute name="style">
+                                    <xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
+                                </xsl:attribute>
                                 <tr>
-                                    <td>                                        
-                                        2. Click the <xsl:value-of select="notification_data/item_loans/item_loan/library_name"/> option along the left and renew items
-                                    </td>
-                                </tr>                               
-
-                                <tr>
-                                    <td>
-                                        <table cellpadding="5" class="listing">
-                                            <xsl:attribute name="style">
-                                                <xsl:call-template name="mainTableStyleCss" /> <!-- style.xsl -->
-                                            </xsl:attribute>
-                                            <tr>
-                                                <th>Title</th>
-                                                <th>Description</th>
-                                                <th>Author</th>
-                                                <th>Due Date</th>
-                                                <th>Library</th>
-                                            </tr>
-
-                                            <xsl:for-each select="notification_data/item_loans/item_loan">
-                                            <tr>
-                                                <td><xsl:value-of select="title"/></td>
-                                                <td><xsl:value-of select="description"/></td>
-                                                <td><xsl:value-of select="author"/></td>
-                                                <td><xsl:value-of select="due_date"/></td>
-                                                <td><xsl:value-of select="library_name"/></td>
-
-                                            </tr>
-                                            </xsl:for-each>
-
-                                        </table>
-                                    </td>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Author</th>
+                                    <th>Due Date</th>
+                                    <th>Library</th>
                                 </tr>
-                            </table>
 
+                                <xsl:for-each select="notification_data/item_loans/item_loan">
+                                <tr>
+                                    <td><xsl:value-of select="title"/></td>
+                                    <td><xsl:value-of select="description"/></td>
+                                    <td><xsl:value-of select="author"/></td>
+                                    <td><xsl:value-of select="due_date"/></td>
+                                    <td><xsl:value-of select="library_name"/></td>
+
+                                </tr>
+                                </xsl:for-each>
+
+                            </table>    
+                            <!-- END OF AFN VERSION 1.8 -->                         
                         </xsl:otherwise>
                     </xsl:choose>                                                                                                                   
                 </xsl:when>
