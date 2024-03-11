@@ -48,7 +48,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 		<xsl:choose>
 			<!-- START Test if it's NOT an EMAIL partner, if so terminate letter -->
 			<xsl:when test="(string-length($is_email_partner) = 0)">
-				<xsl:message terminate="yes">user group is NOT an EMAIL ILL PARTNER - TERMINATE </xsl:message>
+				<!--<xsl:message terminate="yes">user group is NOT an EMAIL ILL PARTNER - TERMINATE </xsl:message>-->
 			</xsl:when>
 			<!-- END Test if it's an EMAIL partner, if so terminate letter -->		
 		</xsl:choose>		
