@@ -82,7 +82,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                             <tr>
                                 <td><xsl:value-of select="fine_fee_type_display"/></td>                                
                                 <td><xsl:value-of select="create_date"/></td>
-                                <td><xsl:value-of select="item_title"/></td>
+                                <td><xsl:value-of select="title"/></td>
                                 <td><xsl:value-of select="fine_fee_ammount/normalized_sum"/></td>
                             </tr>
                             </xsl:for-each>
@@ -151,13 +151,24 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                             </xsl:when>
                             <xsl:otherwise>		
                                 <!-- START AFN TODO review -->
-                                <!-- standard patron footer for home Institution -->	
+                                <!-- standard patron footer for home Institution -->
+                                <!--
                                 <p id="patron_settle_id" align="left">
                                     <b>@@please_settle@@</b>
                                 </p>                        
                                 <p id="patron_local_payment_id" align="left">
-                                    Fine payments are accepted in-person at the Library's Ask Us Desk or over the phone using a credit card. Debit cards are only accepted in-person at the Library. Please note that we cannot accept cash payments.
+                                    If you recently made a payment to your account, it may take up to three business days for the payment to be reflected.
                                 </p>
+                                -->
+                                <p>If you recently made a payment to your account, it may take up to three business days for the payment to be reflected.</p>
+                                <p><strong>If you have not made a payment with respect to the above charges, please settle your account at the earliest opportunity.</strong></p>
+                                <p>Fine payments are accepted in-person at any library circulation desk, online through Omni’s My Account portal under the Fine + Fees tab, or over the phone using a credit card. Debit cards are only accepted in-person at our libraries. Cash payments are not accepted.</p>
+                                <p>To pay over the phone, please call 416 736 2100 ext. 33359.</p>
+                                <p>If you have questions about your fees/fines, please contact the lending library of your item or email the Access Services department at askusyul@yorku.ca.</p>
+                                <p>For inquiries regarding a Resource Sharing/Inter-Library Loan item, please email resourcesharing@yorku.ca.</p>
+                                <p>For inquiries regarding a Media Creation Lab item, please email diginit@yorku.ca.</p>
+                                <p>For inquiries regarding Nellie Library items, please email nlrowell@yorku.ca.</p>
+
                                 <!-- END AFN TODO -->
 
                             </xsl:otherwise>
