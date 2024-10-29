@@ -12,9 +12,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <!-- START AFN-VERSION 1.8 -->
 <!-- Check if an email partner. If it is, we're trying to send more of an invoice letter -->
 <xsl:variable name="is_email_partner">
-	<xsl:if test="(notification_data/user_for_printing/user_group = 'NZILLUSER') or (notification_data/user/user_group = 'NZILLUSER')">
-		TRUE
-	</xsl:if>
+	<xsl:if test="(notification_data/user_for_printing/user_group = 'NZILLUSER') or (notification_data/user/user_group = 'NZILLUSER') or (notification_data/user_for_printing/user_group = 'RSPARTNER') or (notification_data/user/user_group = 'RSPARTNER')">
+        TRUE
+    </xsl:if>
 </xsl:variable>
 <!-- END AFN-VERSION 1.8 -->
 
@@ -29,7 +29,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 				<xsl:call-template name="bodyStyleCss" /> <!-- style.xsl -->
 			</xsl:attribute>
 
-				<xsl:call-template name="head" /> <!-- header.xsl -->
+				<xsl:call-template name="head">
+                    <xsl:with-param name="is_email_partner" select = "$is_email_partner" />
+                </xsl:call-template> <!-- header.xsl -->
+                
 				<xsl:call-template name="senderReceiver" /> <!-- SenderReceiver.xsl -->				
             
             <!-- START AFN-VERSION 1.8 -->
@@ -47,6 +50,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         </xsl:when>
                         <xsl:otherwise>						
                             <!-- Omni Email Partner receipt ENGLISH-->
+                            <!--
                             <p id="email_partner_count_summary_id" align="left">    
                                 <b>
                                     Total Number of Requests: <xsl:value-of select="count(notification_data/fines_fees_list/*)"/>                                
@@ -62,9 +66,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                     Requesting Library: <xsl:value-of select="notification_data/user_for_printing/name"/>&#160;<xsl:value-of select="notification_data/user_for_printing/last_name"/>
                                 </b>
                             </p>
+                            -->
 
                             <p id="email_partner_request_lib_id" align="left">
-                                @@we_would_like@@ <xsl:call-template name="AFNOrgName" /> - <xsl:value-of select="notification_data/organization_unit/name"/> @@debt_of@@ <b><xsl:value-of select="notification_data/total_fines_amount"/>&#160;<xsl:value-of select="notification_data/total_fines_currency"/></b>
+                                <!--@@we_would_like@@ <xsl:call-template name="AFNOrgName" /> - <xsl:value-of select="notification_data/organization_unit/name"/> @@debt_of@@ <b><xsl:value-of select="notification_data/total_fines_amount"/>&#160;<xsl:value-of select="notification_data/total_fines_currency"/></b>-->
+                                The following fees have been added to your account. Please consider this notice as your invoice.
                             </p>                        
                         
                         <table cellpadding="4" class="listing">
@@ -73,23 +79,33 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                             </xsl:attribute>
                             <tr>
                                 <th>@@fee_type@@</th>
-                                <th>Shipped</th>
-                                <th>Item</th>
                                 <th>@@fee_amount@@</th>
-                                                                
+                                <th>@@note@@</th>
+                                <th>@@line1@@</th>
                             </tr>
                             <xsl:for-each select="notification_data/fines_fees_list/user_fines_fees">
                             <tr>
-                                <td><xsl:value-of select="fine_fee_type_display"/></td>                                
-                                <td><xsl:value-of select="create_date"/></td>
-                                <td><xsl:value-of select="title"/></td>
+                                <td><xsl:value-of select="fine_fee_type_display"/></td>
                                 <td><xsl:value-of select="fine_fee_ammount/normalized_sum"/></td>
+                                <td><xsl:value-of select="fine_comment"/></td>
+                                <td><xsl:value-of select="item_title"/></td>                        
                             </tr>
                             </xsl:for-each>
-
                         </table>
-                        <br />                                                                       
 
+                        <p>If you recently made a payment to your account, it may take up to three business days for the payment to be reflected.</p>
+                        <p><strong>If you have not made a payment with respect to the above charges, please settle your account at the earliest opportunity.</strong></p>
+                        <p>Payments are accepted in the following methods:</p>
+                        <ul>
+                            <li>Online through Omni’s My Account portal, under the ‘Fine + Fees’ tab.</li>
+                            <li>Over the phone using a credit card. To pay over the phone, please call 416 736 2100 ext. 33359.
+</li>
+                            <li>To pay by cheque, contact the Resource Sharing Department for instructions.</li>
+                        </ul>
+                        
+                        <p>If you have questions about this invoice, please contact the Resource Sharing Department at <a href="mailto:resourcesharing@yorku.ca">resourcesharing@yorku.ca</a> or (416) 736-5808.</p>
+
+                        <p><a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;section=loans&amp;lang=en">Login to My Account</a></p>
                         </xsl:otherwise>
 	                </xsl:choose>	
                 </xsl:when>

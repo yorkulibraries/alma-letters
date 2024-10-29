@@ -6,6 +6,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 
 <xsl:template name="head">
+    <xsl:param name = "is_email_partner" />
 <table cellspacing="0" cellpadding="5" border="0">
     <xsl:attribute name="style">
         <xsl:call-template name="headerTableStyleCss" /> <!-- style.xsl -->
@@ -47,8 +48,15 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:when test="letter_type = 'SavedSearchesLetter' ">
                 <h1>New Results for Your Saved Search</h1>
             </xsl:when>
-            <xsl:otherwise>         
-                <h1><xsl:value-of select="letter_name"/></h1>
+            <xsl:otherwise>
+                <xsl:choose>
+                    <xsl:when test="(string-length($is_email_partner) > 0)">
+                        <h1>Resource Sharing Fee Notification</h1>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <h1><xsl:value-of select="letter_name"/></h1>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>           
     </td>
