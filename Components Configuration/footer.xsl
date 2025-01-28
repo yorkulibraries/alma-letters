@@ -175,7 +175,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                     <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:libaskus@uwaterloo.ca"> libaskus@uwaterloo.ca</a> | 519-888-4567 ext. 84883</p>
                                 </xsl:when>         
                                 <xsl:when test="$external_id = '01UTON_UW' ">
-                                    <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:LeddyLibrary@uwindsor.ca"> LeddyLibrary@uwindsor.ca</a> | 519-253-3000 ext. 3402</p>
+                                    <!-- AFN-VERSION 1.12 START ADJUST Windsor contact -->
+                                    <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:LeddyLibrary@uwindsor.ca"> LeddyLibrary@uwindsor.ca</a> 519-253-3000 ext. 3402 | Law: <a href="mailto:LawCirc@uwindsor.ca"> LawCirc@uwindsor.ca</a> 519-253-3000 ext. 2977</p>
+                                    <!-- AFN-VERSION 1.12 END ADJUST Windsor contact -->
                                 </xsl:when>
                                 <xsl:when test="$external_id = '01OCUL_UWO' ">
                                     <p><xsl:call-template name="afn_fr_contact_us" />  <a href="mailto:library@uwo.ca"> library@uwo.ca</a></p>
@@ -256,7 +258,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                                     <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:libaskus@uwaterloo.ca"> libaskus@uwaterloo.ca</a> | 519-888-4567 ext. 84883 </p>
                                 </xsl:when>
                                 <xsl:when test="$external_id = '01UTON_UW' ">
-                                    <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:LeddyLibrary@uwindsor.ca"> LeddyLibrary@uwindsor.ca</a> | 519-253-3000 ext. 3402</p>
+                                    <!-- AFN-VERSION 1.12 START ADJUST Windsor contact -->
+                                    <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:LeddyLibrary@uwindsor.ca"> LeddyLibrary@uwindsor.ca</a> 519-253-3000 ext. 3402 | Law: <a href="mailto:LawCirc@uwindsor.ca"> LawCirc@uwindsor.ca</a> 519-253-3000 ext. 2977</p>
+                                    <!-- AFN-VERSION 1.12 END ADJUST Windsor contact -->
                                 </xsl:when>
                                 <xsl:when test="$external_id = '01OCUL_UWO' ">
                                     <p><xsl:call-template name="afn_en_contact_us" />  <a href="mailto:library@uwo.ca"> library@uwo.ca</a></p>
