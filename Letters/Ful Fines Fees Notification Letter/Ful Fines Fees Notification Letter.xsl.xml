@@ -95,17 +95,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
                         <p>If you recently made a payment to your account, it may take up to three business days for the payment to be reflected.</p>
                         <p><strong>If you have not made a payment with respect to the above charges, please settle your account at the earliest opportunity.</strong></p>
-                        <p>Payments are accepted in the following methods:</p>
                         <ul>
-                            <li>Online through Omni’s My Account portal, under the ‘Fine + Fees’ tab.</li>
-                            <li>Over the phone using a credit card. To pay over the phone, please call 416 736 2100 ext. 33359.
-</li>
-                            <li>To pay by cheque, contact the Resource Sharing Department for instructions.</li>
+                            <li>Please pay online through Omni’s <a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;section=overview&amp;lang=en">My Account portal</a>, under the ‘Fine + Fees’ tab.</li>
+                            <li>For other payment methods, please refer to <a href="https://www.library.yorku.ca/web/ask-services/borrow-renew-return/omni-interlibrary-loan/policies-procedures-for-external-libraries/#PAYFEES">Policies and Procedures for External Libraries</a>.</li>
+                            <li><strong>PLEASE NOTE, WE DO NOT ACCEPT ELECTRONIC FUND TRANSFERS (EFTs).</strong></li>
                         </ul>
                         
                         <p>If you have questions about this invoice, please contact the Resource Sharing Department at <a href="mailto:resourcesharing@yorku.ca">resourcesharing@yorku.ca</a> or (416) 736-5808.</p>
 
-                        <p><a href="https://ocul-yor.primo.exlibrisgroup.com/discovery/account?vid=01OCUL_YOR:YOR_DEFAULT&amp;section=loans&amp;lang=en">Login to My Account</a></p>
                         </xsl:otherwise>
 	                </xsl:choose>	
                 </xsl:when>
